@@ -1,0 +1,212 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>Diagnosis</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+  <style>
+    .openBox{
+      max-height: 1000px;
+      overflow-y: scroll;
+      background-color:rgba(200,200,255,1);
+      border:none;
+     width:300px;
+    }
+
+    .openBox label{
+      padding:.5em 0em;
+    }
+
+    .openBox label{
+      display: block;
+      cursor: pointer;
+    }
+    .bg-img{
+      background:url({%static "images/image.jpg"  %});
+      height:80vh;
+      background-size:cover;
+      position:relative;
+      z-index:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .bg-img:before{
+      content:'';
+      position:absolute;
+      height:100%;
+      width:100%;
+      background:white;
+      left:0;
+      opacity:0.8;
+      z-index:-1;
+    }
+
+    .bg-img .input-group{
+      width:550px; 
+      background:white;
+      border:1px solid rgba(0,0,0,0.1); 
+      align-items: center;;
+      box-shadow:20px 30px 30px 0px rgba(0,0,0,0.3);
+
+    }
+    .bg-img .input-group select{
+      height:60px;
+      border:none;
+      text-transform:capitalize;
+    }
+    .bg-img .input-group select:focus{
+      box-shadow:none;
+    }
+
+    .bg-img  button{
+      background:blue;
+      border:none;
+      padding:0.7em 3em;
+      color:white;
+      font-family:poppins;
+      transform:translateX(5em);
+      border-radius:5px !important;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight:bold;
+    }
+
+    .col-md-9{
+      position: relative;
+    }
+    .openBox label{
+      display:flex;
+      align-items:center;
+      border-bottom:1px solid rgba(0,0,0,0.05);
+    }
+    .openBox::-webkit-scrollbar{
+      background:transparent;
+      width:8px;
+    }
+    .openBox::-webkit-scrollbar-thumb{
+background:blue;
+    }
+    input[type='checkbox']{
+      size:20px;
+      width:20px;
+      height:20px;
+      background:red;
+      font-size: 20px;
+      margin-right:1em;
+    }
+    .bg-img  .next{
+      
+      position:absolute;
+      right:0;
+      top:50%;
+      transform:translateX(0em);
+      padding:0.7em 1.5em;
+    }
+
+    .bg-img :nth-last-col
+  </style> 
+  
+  
+<!-- <div class="row">
+<div class="col-md-3"></div>
+
+
+<div class="col-md-6">
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+      select animal
+    </a>
+  
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+     {% for animal in animals %}
+      <li><a class="dropdown-item" href="#">{{animal.name}}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>
+  <div class="col-md-3">
+    <button type="button" class="btn btn-outline-info">next</button>
+  </div>
+</div>
+
+   -->
+
+
+<div class="container-fluid bg-img"  >
+
+  
+  <form action="" method='POST'>
+    <div class='col-md-9  m-auto'>
+     <h4 class=' pb-3' style='line-height:35px;'>Here You can select your furry friend's category.<br>  And with one click you can saveyour friend from severe diseases at early stage</h4> 
+    {% csrf_token %}
+    
+    <label for="animal_category" class='pb-2'>Choose Category </label>
+    <div class='input-group'>
+    <select name="category" id="animal_category" class='form-control'>
+      {% for animal in animals %}
+    
+        {% if selected_category  %}
+            
+              {% if animal.name == selected_category %}
+                <option value="{{animal.id}}" selected>{{animal.name}}</option>
+               {% else %} 
+               <option value="{{animal.id}}" >{{animal.name}}</option>
+                 {% endif %}
+
+          {% else %}
+            <option value="{{animal.id}}" >{{animal.name}}</option>
+         {% endif %}
+    
+         {% empty %} 
+
+        
+      {% endfor %}
+    </select>
+
+    <input type="text" value="1" name='type' hidden>
+    <button type="submit">Next</button>
+</div>
+</div>
+  </form>
+
+{% if symptoms %}
+<div class="row" style='justify-content: flex-end;'>
+<div class="col-md-12">
+  <h4>Symptoms</h4>
+
+  <form action="" method='POST'>
+    {% csrf_token %}
+    <input type="text"  value="2" name='type' hidden>
+   <div class="openBox form-control">
+    {% for symp in symptoms %}
+    <label> <input type='checkbox' value="{{symp}}" name='symptoms'> {{symp}}</label>
+    {% endfor %}
+    
+   </div>
+   <input type="text" value="{{categ_id}}" name='category' hidden >
+    <button class="next" type="submit">Next</button>
+
+  </form>
+
+</div> 
+
+</div>
+{% endif %}
+
+{% if diseases %}
+<div class="row" >
+<div class="col-md-12">
+  <h3>Possible diseases could be </h3>
+  <ol>
+  {% for d in diseases %}
+    <li>{{d.Disease_name}}</li>
+  {% endfor %}
+</ol>
+</div>
+
+{%endif%}
+</div>
+
+</div> 
+  {% endblock %}

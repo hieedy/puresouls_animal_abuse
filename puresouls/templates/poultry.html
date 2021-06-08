@@ -1,0 +1,28 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>Poultry</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+
+
+
+<div class="container text-center " >
+  <h1 class="p-4 mb-5" style="background-color: lightpink;color:navy;font-family:fantasy,cursive,sans-serif;"><b> Poultry Animals killed for food</b></h1>       
+</div>
+
+<div class="list-group">
+    
+   
+    <a href='{% url "poultry1" %}' class="list-group-item list-group-item-action list-group-item-secondary">Enter country for analysis on  poutry production</a>
+    <a href='{% url "poultry2" %}' class="list-group-item list-group-item-action list-group-item-success">Enter  year to get graph of max production in top 10 countries</a>
+    <a href='{% url "poultry3" %}' class="list-group-item list-group-item-action list-group-item-danger">Enter year to get graph of min production in top 10 countries</a>
+    <a href='{% url "poultry4" %}' class="list-group-item list-group-item-action list-group-item-warning">Enter  two countries and year to analysis on poultry production</a>
+    <a href='{% url "poultry5" %}' class="list-group-item list-group-item-action list-group-item-info">Enter two countries and two year for analysis on poultry production</a>
+
+    
+  </div>
+{% endblock %}
+
+
+ 

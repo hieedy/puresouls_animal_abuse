@@ -1,0 +1,113 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>News</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+<style>
+body {
+    background-color: #eee;
+    font-family: 'Manrope', sans-serif
+}
+
+.news-card {
+    border-radius: 8px
+}
+
+.news-feed-image {
+    border-radius: 8px;
+    width: 100%
+}
+
+.date {
+    font-size: 12px
+}
+
+.username {
+    color: blue
+}
+
+.share {
+    color: blue
+}
+
+
+
+</style>
+<div>
+    {% if page_number == 1 %}
+            <a href='{% url "news" page_number|add:"1" %}' class="btn btn-primary">Next</a>
+     {% else %}
+        
+        <a href='{% url "news" page_number|add:"-1" %}' class="btn btn-success">Previous</a>
+        <a href='{% url "news" page_number|add:"1" %} ' class="btn btn-primary">Next</a>
+     {% endif %}
+</div>
+<div class="container mt-5 mb-5" style="height: 80vh; overflow-y: scroll">
+
+    {% for article in articles %}
+   
+    <div class="row d-flex news-card p-3 bg-white" style=" margin-top: 5px">
+        
+            
+            <div class="col-md-4">
+                    <div class="feed-image" style="height: 150px; width: 150px;"><img class="news-feed-image rounded img-fluid img-responsive" width="100%" height="100%"
+                        src="{{article.urlToImage}}"  ></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="news-feed-text">
+                        <h5>{{article.description}}<br></span>
+                        <div class="d-flex flex-row justify-content-between align-items-center mt-2">
+                            <i class="fa fa-share share"></i>
+                        </div>
+                    </div>
+             
+            
+        </div>
+    </div>
+
+    {% endfor %}
+
+    
+
+
+    <!-- <div class="row d-flex  pt-2">
+        <div class="col-md-6">
+            <div class="d-flex flex-row"></div>
+            <div class="row news-card p-3 bg-white">
+                <div class="col-md-4">
+                    <div class="feed-image" style="height: 100px; width: 100px;"><img class="news-feed-image rounded img-fluid img-responsive" src={%static "images/sidebar.jpg" %}  ></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="news-feed-text">
+                        <h5>Green plants are going to extinct about 500 times</h5><span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard<br></span>
+                        <div class="d-flex flex-row justify-content-between align-items-center mt-2">
+                            <i class="fa fa-share share"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex  pt-2">
+        <div class="col-md-6">
+            <div class="d-flex flex-row"></div>
+            <div class="row news-card p-3 bg-white">
+                <div class="col-md-4">
+                    <div class="feed-image" style="height: 100px; width: 100px;"><img class="news-feed-image rounded img-fluid img-responsive" src={%static "images/sidebar.jpg" %}  ></div>
+                </div>
+                <div class="col-md-8">
+                    <div class="news-feed-text">
+                        <h5>Green plants are going to extinct about 500 times</h5><span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard<br></span>
+                        <div class="d-flex flex-row justify-content-between align-items-center mt-2">
+                            <i class="fa fa-share share"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+
+{% endblock %}

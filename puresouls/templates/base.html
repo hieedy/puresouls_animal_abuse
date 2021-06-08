@@ -1,0 +1,143 @@
+{% load static %}
+<html>
+    <head><title>header</title>
+<link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet">
+   <link href="{%static 'icofont/icofont.min.css' %}"  rel="stylesheet">
+        <link href="{%static 'css/test-slider-fullwidth.css' %}" rel="stylesheet">
+         <link rel="stylesheet" href="{%static 'css/aos.css' %}" />
+        <link href="{%static 'css/stylesheet.css' %}" rel="stylesheet">
+        <link href="{%static 'css/font.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    <style>
+        
+        .h1{font-family: cursive}
+         </style>
+         </head>     
+   <body>
+       
+       <div class="container-fluid top-header" style="background-color: dodgerblue">
+<div class="container">
+    <div class="row ">
+    <div class="col-md-5 ">
+    <ul>
+      <li><a href='#'> <i class='icofont-facebook  '></i></a></li>
+      <li><a href='#'>  <i class='icofont-instagram '></i></a></li>
+      <li><a href='#'><i class='icofont-twitter '></i></a></li>
+    </ul>
+    
+         
+           
+          
+        
+    </div>
+    <div class="col-md-5">
+    <p>
+              <i class='icofont-phone  '></i>
+            <span>69767448534</span>  
+              <i class='icofont-email  '></i>
+             <span>puresouls@gmail.com</span>
+          </p>    
+        
+    </div>
+          
+    </div></div></div>   
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #eef9ff">
+  <div class="container-fluid">
+    <a class="navbar-brand ms-5" href="#"> <img src={%static "images/mylogo.png" %} height="100px" width="100px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto me-5 mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'aboutus' %}">About US</a>
+        </li>
+            <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login In</a>
+        </li>
+            <li class="nav-item">
+          <a class="nav-link" href="{% url 'contactus' %}">Contact Us</a>
+        </li>
+            <li class="nav-item">
+          <a class="nav-link" href="{% url 'FAQ' %}">FAQ</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Facilities
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'doctors' %}">Consult Vet</a></li>
+            <li><a class="dropdown-item" href="{% url 'ngos' %}">NGO'S</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'Animal_category' %}">Diagnosiss</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+
+<div class="container-fluid    p-4" style="background-color:#eef9ff">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+        
+            <h2><img src={%static "images/mylogo.png" %} height="60px" width="60px" p-4><b>PURESOULS</b></h2>
+            <p class="text-secondary " style="text-align: justify">Our organization is founded on the belief that animals are entitled to kind and respectful treatment at the hands of humans and must be protected under the law.Aim is “to provide effective means for the prevention of cruelty to animals throughout the India.” </p>
+            
+            
+            </p>
+        </div>
+        <div class="col-md-3">
+        
+        <h3><b>Services</b></h3><br/>
+            <p class="text-secondary"><a href="{% url 'doctors' %}" style="text-decoration:none;color:#777">View Doctor</a></p>
+            <p class="text-secondary"><a href="{% url 'Animal_category' %}" style="text-decoration:none;color:#777">Diagnosis</a></p>
+            <p class="text-secondary">Book Appointment</p>
+            <p class="text-secondary"><a href="{% url 'report' %}" style="text-decoration:none;color:#777">Report Animal Abuse</a></p>
+        
+        </div>
+        <div class="col-md-3">
+        <h3><b>Navigation</b></h3><br/>
+            <p><a href="{% url 'blog' %}" style="text-decoration:none;color:#777">Blog</a></p>
+            <p><a href="{% url 'help' %}" style="text-decoration:none;color:#777">Help & Support</a></p>
+             <p><a href="{% url 'review' %}" style="text-decoration:none;color:#777">Review & Feedback</a></p>
+            <p><a href="{% url 'contactus' %}" style="text-decoration:none;color:#777">Contact Us</a></p>
+        </div>
+        
+        <div class="col-md-3">
+        <h3><b>Address</b></h3><br/>
+        <p class="text-secondary"><i class="icofont-location-pin"></i> Ranjit Avenue, Amritsar<br/>
+           Sco-9 Burj Punjab</p>
+            <p class="text-secondary"> <i class="icofont-phone"></i> 45673456</p>
+        <p class="text-secondary"><i class="icofont-email"></i> puresouls@gmail.com</p>
+        <p><i class='icofont-facebook ms-2 text-lightgray bg-gray rounded p-2'></i>
+            
+          <i class='icofont-instagram ms-2 text-lightway bg-gray rounded p-2'></i>
+         <i class='icofont-twitter ms-2 text-lightgray bg-gray rounded p-2'></i>
+        </div>
+        </div>
+    
+    </div>
+    
+    
+    </div>
+   
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

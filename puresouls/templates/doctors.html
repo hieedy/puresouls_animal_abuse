@@ -1,0 +1,200 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>Doctor list</title>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<style>
+    .card {
+        background-color: rgb(250, 250, 255);
+   
+    border-radius: 10px;
+    transition: all 1s;
+    cursor: pointer;
+    box-shadow:5px 5px 10px 3px  rgba(0,0,0,0.1);
+    padding:1em;
+    
+}
+
+
+body {
+    font-family: 'Maven Pro', sans-serif
+}
+
+.add {
+    border-radius: 20px
+}
+
+
+.apointment button {
+    border-radius: 20px;
+    background-color: #eee;
+    color: #000;
+    border-color: #eee;
+    font-size: 13px
+}
+.profile button {
+    border-radius: 20px;
+    background-color: #eee;
+    color: #000;
+    border-color: #eee;
+    font-size: 13px
+}
+ 
+.flex-img{
+    display: flex;
+    align-items:flex-start;
+    
+}
+.flex-img img{
+    margin-right:1em;
+    width:80px;
+    height:80px;
+}
+.flex-img h5 small{
+    font-size:14px;
+    letter-spacing: 1px;
+    text-transform:uppercase;
+    font-weight: bold;
+    display:block;
+    padding-top:0.4em;
+    color:darkgray;
+}
+
+.flex-img2 .btn{
+    background-color: rgb(70,70,70);
+    padding:6px 10px;
+    margin:0px 5px;
+    font-size:14px;
+    
+    letter-spacing: 1px;
+
+color:rgb(240,240,240);
+border:1px solid rgb(230,230,230)
+}
+
+</style>
+
+<body>
+<div class="container mt-5 mb-5">
+
+  
+    <div class="row">
+        <center><h3>Doctors</h3></center>
+
+            <div class="ro">
+                <form action="" method='POST'>
+                    {% csrf_token %}
+                    <select name="filter_city" id="">
+                        <option value="" selected disabled>Apply Filter</option>
+                        {% for doc_city in doctors_cities %}
+                           
+                            {% if selected_city == doc_city.city %}
+                                <option value="{{doc_city.city}}" selected>{{doc_city.city}}</option>
+                            {% else %}
+                                <option value="{{doc_city.city}}">{{doc_city.city}}</option>
+                            {% endif %}
+                          {% endfor %}  
+                    </select>
+                    <button type='submit'>Apply</button>
+                </form>
+            </div>
+
+      {% for doctor in doctors %}
+        <div class="col-md-4 mt-5" >
+            <div class="card ">
+                <div class="flex-img mb-2" > <img src="{{doctor.profile_image.url}}" class="">
+                    <h5 class="mb-0">{{doctor.name}} <small>{{doctor.specialition}}</small><small>Contact NO. {{doctor.mobile}}</small></h5>  </div>
+                
+                    
+                    <div class="flex-img flex-img2 ">
+                <div class="mt-4 apointment" > <a   class="btn  text-uppercase" href="{% url 'bookappointment' doctor.id %}"  target="_blank" >Book Appointment</a> </div>
+                <div class="mt-4 profile">  <a   class="btn  text-uppercase" href="{% url 'doctorprofile' doctor.id  %}"  target="_blank" >View Profile</a> </div>
+            </div>
+            </div>
+        </div>
+
+       {% empty %} 
+            <div class="row alert alert-success" >
+                No record found for your city. pleasae check your nearby cities.
+            </div>
+        {% endfor %} 
+
+<!-- 
+        <div class="col-md-3">
+            <div class="card p-2 py-3 text-center">
+                <div class="img mb-2"> <img src="https://i.imgur.com/o5uMfKo.jpg" width="70" class="rounded-circle"> </div>
+                <h5 class="mb-0">Arshdeep Singh</h5> <small>Cardiologist</small>
+                
+                <div class="mt-4 apointment"> <button class="btn btn-success text-uppercase">Book Appointment</button> </div>
+                <div class="mt-4 profile"> <button class="btn btn-success text-uppercase">View Profile</button> </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-2 py-3 text-center">
+                <div class="img mb-2"> <img src="https://i.imgur.com/tmdHXOY.jpg" width="70" class="rounded-circle"> </div>
+                <h5 class="mb-0">Palvi</h5> <small>Surgeon</small>
+                
+                <div class="mt-4 apointment"> <button class="btn btn-success text-uppercase" >Book Appointment</button> </div>
+                <div class="mt-4 profile"> <button class="btn btn-success text-uppercase">View Profile</button> </div>
+            
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-2 py-3 text-center">
+                <div class="img mb-2"> <img src="https://i.imgur.com/C4egmYM.jpg" width="70" class="rounded-circle"> </div>
+                <h5 class="mb-0">Mohsin ali</h5> <small>Dentist</small>
+                
+                <div class="mt-4 apointment"> <button class="btn btn-success text-uppercase">Book Appointment</button> </div>
+                <div class="mt-4 profile"> <button class="btn btn-success text-uppercase">View Profile</button> </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-2 py-3 text-center">
+                <div class="img mb-2"> <img src="https://i.imgur.com/0LKZQYM.jpg" width="70" class="rounded-circle"> </div>
+                <h5 class="mb-0">Deepak </h5> <small>Eye Specialist</small>
+              
+                <div class="mt-4 apointment"> <button class="btn btn-success text-uppercase">Book Appointment</button> </div>
+                <div class="mt-4 profile"> <button class="btn btn-success text-uppercase">View Profile</button> </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-2 py-3 text-center">
+                <div class="img mb-2"> <img src="https://i.imgur.com/ZSkeqnd.jpg" width="70" class="rounded-circle"> </div>
+                <h5 class="mb-0">Krishma</h5> <small>Radiologist</small>
+               
+                <div class="mt-4 apointment"> <button class="btn btn-success text-uppercase">Book Appointment</button> </div>
+                <div class="mt-4 profile"> <button class="btn btn-success text-uppercase">View Profile</button> </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-2 py-3 text-center">
+                <div class="img mb-2"> <img src="https://i.imgur.com/MZm1LNz.jpg" width="70" class="rounded-circle"> </div>
+                <h5 class="mb-0">Sudha sanan</h5> <small>Veterinarian</small>
+               
+                <div class="mt-4 apointment"> <button class="btn btn-success text-uppercase">Book Appointment</button> </div>
+                <div class="mt-4 profile"> <button class="btn btn-success text-uppercase">View Profile</button> </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card p-2 py-3 text-center">
+                <div class="img mb-2"> <img src="https://i.imgur.com/HFpxxJz.jpg" width="70" class="rounded-circle"> </div>
+                <h5 class="mb-0">charan</h5> <small>Veterinarian</small>
+               
+                <div class="mt-4 apointment"> <button class="btn btn-success text-uppercase">Book Appointment</button> </div>
+                <div class="mt-4 profile"> <button class="btn btn-success text-uppercase">View Profile</button> </div>
+            </div>
+        </div>  -->
+    </div>
+</div>
+</div>
+
+
+   
+   
+
+
+</body>
+{% endblock %}

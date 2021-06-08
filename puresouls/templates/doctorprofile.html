@@ -1,0 +1,78 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>Doctor Profile</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+<style>
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+body {
+    background-color: #EEEFF3;
+    font-family: 'Poppins', sans-serif
+}
+
+
+.media {
+    border: 1px solid #EBEDEC
+    
+}
+
+.fa-angle-down {
+    margin-top: 13px
+}
+
+p.text-muted {
+    font-size: 14px
+}
+
+
+</style>
+<div class="container" >
+<center><h3>Doctor's Profile</h3></center>
+<div class="row">
+<div class="col-md-4">
+<h4>Name</h4>
+<p>{{doctor.name}}</p>
+<h4>Contact No</h4>
+<p>{{doctor.mobile}}</p>   
+<h4>Email</h4>
+<p>{{doctor.email}}</p>   
+<h4>Location</h4>
+<p>{{doctor.address}}</p>   
+<h4>City</h4>
+<p>{{doctor.city}}</p>  
+    
+    
+    
+</div>
+<div class="col-md-4">
+ <img src="{{doctor.profile_image.url}}" style="border-radius: 100%; height: 100px; width: 100px; ">
+
+</div>
+<div class="col-md-4">
+ 
+ 
+ <h4>State</h3>
+ <p>{{doctor.state}}</p>   
+ <h4>Specialization</h4>
+ <p>{{doctor.specialition}}</p> 
+ <h4>Experience</h4>
+ <p>{{doctor.experience}}</p>   
+ <h4>Qualification</h4>
+ <p>{{doctor.qualification}}</p>    
+  
+  
+</div>
+</div>
+
+
+</div>
+    
+    
+
+
+{% endblock %}

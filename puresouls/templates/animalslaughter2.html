@@ -1,0 +1,35 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>animalslaughter</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container a text-center mt-5 p-5"> 
+    <form action="" method="POST">
+    {% csrf_token %}
+      <label for="animaltype">SELECT THE ANIMAL TYPE:</label>
+  
+      <select name="animaltype" id="animaltype">
+        <option value="dog">dog</option>
+        <option value="cat">cat</option>
+        <option value="cow">cow</option>
+        <option value="pig">pig</option>
+      </select>
+      
+      <label for="country">SELECT THE COUNTRY:</label>
+  
+      <select name="country" id="country">
+        <option value="India">India</option>
+        <option value="Japan">Japan</option>
+        <option value="China">China</option>
+        <option value="Afghanistan">Afghanistan</option>
+      </select>
+      <button class=" submit n">Enter</button></div>
+  </form>
+  </div>
+
+{% endblock %}
+
+
+ 

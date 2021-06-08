@@ -1,0 +1,289 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Services</title>
+{% endblock %}
+{% load static %}
+ {% block content %}
+
+<html>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <style>
+      .banner{background:url({%static "Images/GettyImages-963142602-88f9dab.jpg"%});background-size:cover; background-repeat: no-repeat; }
+      .banner-color{;background:rgba(0,0,0,0);padding:30px}
+      .banner .hi{font-family: Georgia, 'Times New Roman', Times, serif;background-color:rgba(22, 11, 11, 0.5);color:white;font-size: 32px;font-weight: 400;height:300px}   
+      .ac{
+          background-color:dodgerblue; color:white 
+      }
+      .ac:hover{
+          background-color:#909456;
+          
+      }
+  
+  </style>
+  
+      <div class="container-fluid banner mb-5">
+  <div class="row">
+  <div class="col-md-12 text-center banner-color">
+    <h3 class="font-weight-bold">Frequently Asked Questions</h3> <span class="d-block text-center px-3">If you are new to Q-Answer or looking for answer to your questions. this guide will <br> help you to learn more about our service and their features.</span>
+  
+      </div></div>
+  </div>
+  
+      <div class="container mb-5">
+          <div class="row">
+              <div class="col-md-6">
+              
+          <div class="accordion " id="accordionExample">
+          <div class="card ">
+              <div class="card-header ac" id="headingOne">
+              <h2 class="mb-0  ">
+                 <button class="btn text-light btn-link btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+                     <b> What does the PURESOULS website do ?</b>               </button>
+              </h2>
+             </div>
+
+             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+             <div class="card-body">
+              PURESOULS is an academic research institute under the Guru Nanak Dev University,Computer Science Department. PURESOULS is one of the supporter of the world in spreading awarness on animal abuse.PURESOULS help its user to find nearby hospital , NGO's and most importantly it provides diagnosis feature to detect disease at its very early stage to save precious life <code></code> 
+              </div>
+              </div>
+          </div>
+<div class="card">
+  <div class="card-header ac" id="headingTwo">
+    <h2 class="mb-0 ">
+      <button class="btn text-light btn-link btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <b>What is Animal Abuse ?</b>
+      </button>
+    </h2>
+  </div>
+  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+    <div class="card-body">
+      Animal cruelty encompasses a range of behaviors harmful to animals, from neglect to malicious killing.
+      Intentional cruelty can run the gamut from knowingly depriving an animal of food, water, shelter, socialization or veterinary care to maliciously torturing, maiming, mutilating or killing an animal.
+      </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header ac" id="headingThree">
+    <h2 class="mb-0">
+      <button class="btn text-light btn-link btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <b> What happens when vaccinated dog bites you ?  </b>
+      </button>
+    </h2>
+  </div>
+  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div class="card-body">
+      No, not if the dog is properly vaccinated against rabies and the efficacy of the vaccine is confirmed by laboratory evidence. Otherwise an appropriate post-exposure prophylaxis (PEP) should be given.
+    </div>
+  </div>
+</div>
+</div>
+                  <div class="card">
+  <div class="card-header ac" id="headingFour">
+    <h2 class="mb-0">
+      <button class="btn text-light btn-link btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        <b>How does one treat an animal bite?</b>
+      </button>
+    </h2>
+  </div>
+  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+    <div class="card-body">
+      Wounds should be washed and flushed immediately
+      with soap and water for 10–15 minutes. If soap
+      is not available, flush with water alone. This is
+      the most effective first-aid treatment against
+      rabies.
+      ● Wounds should be cleaned thoroughly with 70%
+      alcohol/ethanol or povidone-iodine, if available.
+      ● As soon as possible, take the person to a healthcare facility for further treatment
+    </div>
+  </div>
+</div>
+                  <div class="card">
+  <div class="card-header ac" id="headingFive">
+    <h2 class="mb-0">
+      <button class="btn text-light btn-link btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          <b>Is simply observing the biting dog or cat
+            for 10 days without starting treatment
+            justified? </b>
+      </button>
+    </h2>
+  </div>
+  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+    <div class="card-body">
+      No. In countries where rabies is prevalent in a large
+population of dogs and cats, it is compulsory to start
+treatment and keep the biting dog/cat under 10
+days of observation. If the animal remains healthy
+during the observation period then post-exposure
+prophylaxis (PEP) can be converted into pre-exposure
+regimen, i.e. the vaccine taken will be to prevent
+rabies if bitten in the future.
+    </div>
+  </div>
+</div>
+                  <div class="card">
+  <div class="card-header ac" id="headingSix">
+    <h2 class="mb-0">
+      <button class="btn text-light btn-link btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          <b>Can consumption of meat from an
+            infected animal transmit Disease?</b>    </button>
+    </h2>
+  </div>
+  <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+    <div class="card-body">
+      The consumption of raw meat from an infected animal
+requires PEP. Cooked meat does not transmit dieseases;
+however, it is not advisable to consume meat from
+an infected animal.
+    </div>
+  </div>
+</div>
+              
+              </div>
+              <div class="col-md-6">
+      <div class="card">
+  <div class="card-header ac" id="headingSeven">
+    <h2 class="mb-0">
+      <button class="btn text-light btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+          <b>Can I Get Coronavirus From My Pets?
+          </b>
+      </button>
+    </h2>
+  </div>
+  <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordionExample">
+    <div class="card-body">
+     There is no such evidence till the date to proof if you can get Coronavirus from your pet
+    </div>
+  </div>
+</div>
+                  <div class="card">
+  <div class="card-header ac" id="headingEight">
+    <h2 class="mb-0">
+      <button class="btn text-light btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+          <b> what to do if i become sick with COVID-19 and have a pet</b>
+      </button>
+    </h2>
+  </div>
+  <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+    <div class="card-body">
+      Isolate yourself from everyone else, including your pet. If possible, have another person in your household care for your pet.
+      Avoid petting, snuggling, being kissed or licked, and sharing food or bedding with your pet.
+      If you care for your pet or are around animals while you're sick, wear a cloth face covering. Wash your hands before and after handling animals and their food, waste and supplies. Also, make sure you clean up after your pet. 
+    </div>
+  </div>
+</div>
+                  <div class="card">
+  <div class="card-header ac" id="headingNine">
+    <h2 class="mb-0">
+      <button class="btn text-light btn-link btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+          <b>What To know Before Adopting a pet?</b>
+      </button>
+    </h2>
+  </div>
+  <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+    <div class="card-body">
+      With all of the adorable “fur babies” in need of homes, you might be tempted to make a snap decision. However, it will be better for your future furry BFF if you put a lot of thought into it. For example, do you live in an apartment, or a house with a yard? Does your family travel a lot? Who will be there to let your dog out when you’re not home? Do your siblings want a new dog as much as you do?
+      Dogs require a lot of care that can quickly add up to big bucks. When you’re responsible for a dog, you need to spend money on regular and emergency vet visits (just like humans, dogs can have medical emergencies!), bedding, a collar and harness, high-quality dog food, treats, toys, grooming … the list goes on.
+    </div>
+  </div>
+</div>
+                  <div class="accordion" id="accordionExample">
+<div class="card">
+  <div class="card-header ac" id="headingTen">
+    <h2 class="mb-0">
+      <button class="btn text-light btn-link btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen" >
+          <b>Can drugs affect animals ?</b>
+      </button>
+    </h2>
+  </div>
+
+  <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordionExample">
+    <div class="card-body">
+      Yes. Chemicals can have different effects in different animals—for instance, chocolate is delicious to humans and poisonous to dogs—so even small amounts of a drug could be very harmful for your pet. Alcohol can cause a dog to suffer dangerous drops in blood pressure, blood sugar, and body temperature, to have seizures, and to stop breathing.
+
+      In dogs and cats poisoned by marijuana, signs may be seen within 3 hours, such as a lack of energy, low heart rate, low blood pressure, respiratory depression, hyperactivity, seizures, vomiting, and coma. Also, your pet wouldn’t understand that it had been given a drug, and the sensations that might feel like a “high” to a human would be a very scary experience for an animal. 
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header ac" id="headingEleven">
+    <h2 class="mb-0">
+      <button class="btn text-light btn-link btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+          <b> What’s wrong with keeping birds in cages?</b>
+      </button>
+    </h2>
+  </div>
+  <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordionExample">
+    <div class="card-body">
+      
+      All caged birds are either captured or captive-bred. In the wild, these beautiful beings are never alone, and if separated even for just a moment, they call wildly to their flockmates. Flock-oriented, they preen each other, fly together, play, and share egg-incubation duties. Many species of birds mate for life and share parenting tasks. Most birds will not take a second mate in the wild if their first is lost.
+
+      Life in captivity is often a death sentence for birds, who may suffer from malnutrition, an improper environment, loneliness, and the stress of confinement. Birds are meant to fly and be with others of their own kind in a natural environment
+</div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header ac" id="headingTwelve">
+    <h2 class="mb-0">
+      <button class="btn text-light btn-link btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+        <b> Things to Do if You Witness Cruelty to Animals</b>
+      </button>
+    </h2>
+  </div>
+  <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-parent="#accordionExample">
+    <div class="card-body">
+      Remain calm and get veterinary care.
+      Speak up, because if you don’t, who will? If you see a chained dog, befriend his or her guardians and help them make positive changes to care for their animal companion and to allow him or her to live indoors. If children are throwing stones at birds, don’t hesitate to tell them to stop and explain why it’s wrong to hurt animals. 
+      Document the crime. The second you see that something is wrong, take a photo or video with your cell phone to document the details
+      File a first information report (FIR) with the police immediately. Report the crime to the police.
+      Notify other appropriate authorities.
+      Be persistent. Don’t let criminals get away with abusing animals.
+    </div>
+  </div>
+</div>
+</div>
+              
+              </div>
+              </div>
+          </div>
+      
+      
+    
+       
+       <div class="row " style="background-image: url({%static 'images/secbg3.png' %})">
+       <div class="col-md-1"></div>
+       <div class="col-md-10 pt-5 pb-5">
+           <center><h1  class=" pt-5 text-white" style="font-family: 'Fredoka One',cursive; font-size: 40px;color:#023C5A  ">We Are Looking For Helping Hand</h1><br/></center>
+           <p class="text-white text-center"  style="font-family: 'Fredoka One',cursive; font-size: 20px ">you can work with us . <br/>you can also feed these animals and help those who cant help themselves by makeing donation. </p><br/>
+       <center> <button  class="btn rounded-pill  " style=" background: #FF3E7E;color:white; font-family: DM Sans ,sans-serif; font-size: 20px ">&nbsp;&nbsp;&nbsp;&nbsp;Learn More&nbsp;&nbsp;&nbsp;&nbsp;</button> 
+        <button  class="btn rounded-pill  " style=" background: #FF3E7E;color:white; font-family: DM Sans ,sans-serif; font-size: 20px ">&nbsp;&nbsp;&nbsp;&nbsp;Donate&nbsp;&nbsp;&nbsp;&nbsp;</button> </center><br/>
+       
+       </div></div>
+       
+       
+       
+       
+       
+       
+       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  
+  <script src="js/bootstrap.bundle.min.js"></script>
+      
+      <script src="js/jquery.js"></script>
+       
+       
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+<script src="js/bootstrap.bundle.js"></script>
+       
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="{%static 'js/test-slider-fullwidth.js' %}"></script>
+        </body>
+         </html>
+         {% endblock %}

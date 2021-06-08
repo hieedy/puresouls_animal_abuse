@@ -1,0 +1,20 @@
+      .bg1{background: url(../Educationn/bg.png) ;background-size: cover;left: -150px;position: relative;border-radius: 2rem;background-position: right}
+        .bg{background:linear-gradient(white,orange );height: 100%}
+input{border:none !important;text-indent: 20px;background-color:rgba(0,0,0,0)!important;outline: none;border-radius: 0px !important;border-bottom: 1px solid darkgray !important}
+        input:focus{box-shadow: none!important}
+        input::placeholder{color: #c2c2cc !important}
+        .form-group{position: relative}
+        .form-group1{position: relative}
+        .form-group i{position: absolute;left: 10px;top: 13px;color:darkgray !important}
+        .form-group1 i{position: absolute;margin-left:  88%;top: -26px;color:darkgray !important}
+
+     *{font-family: century gothic!important}
+            .navbar-nav .nav-item .nav-link{color: black;font-family: cursive 
+            }
+            i:hover{background-color: orange!important;color: white !important;}
+            .navbar-nav .nav-item .nav-link:hover{border-bottom: 2px solid coral;color: coral !important} 
+          .banner{background: url(../Educationn/page-background.webp);background-size: cover;}
+            .banner-color{  background: rgba(0,0,0,0.6);padding: 100px}
+            .h{color: white;font-size: 72px;font-weight: 400;line-height: 1.3em}
+            .hi{color: orange;font-size: 32px;font-weight: 400}
+     *{font-family: century gothic!important}

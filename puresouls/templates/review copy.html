@@ -1,0 +1,21 @@
+{% extends 'header.html' %} 
+{% block content %}
+{% load static %}
+            
+        <div class="row" >
+            <div class="col-md-4"></div>
+                <div class="col-md-4 mt-5 border p-5 rounded " style="box-shadow: 0px 0px 10px rgb(153, 153, 173)  ; background-image: url({%static 'images/happyanimal.jpg' %}) ;">
+                    <center><h3 class="text center mb-4">Review</h3></center>
+                    <form action="" method="POST">
+                    {% csrf_token %}
+                        <label for="sub">Enter Subject</label>
+                        <input type="text" class="form-control mb-3" id="sub" name="subject"  style="background:transparent">
+                        <label for="msg">Enter Review</label>
+                        <textarea rows="5" required class="form-control mb-3" id="msg" name="message"  style="background:transparent"></textarea>
+                        <center><input type="submit" class="btn btn-dark" value="send"></center>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div></div></div>
+   
+{% endblock %}           

@@ -1,0 +1,23 @@
+hospitals -filter work ni kr rha --> misspelled amritsar in database. 
+laws website - 
+ngo website - get ni ho rhe piche se ------ DONE
+news- ka page bnana h ---> Done
+
+#########################################design
+
+law detail
+dr profile
+profile page
+review
+contact us
+
+####################visualization
+
+conversion into django   
+
+
+
+pip install newsapi-python
+https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html
+
+Please follow the be

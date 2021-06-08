@@ -1,0 +1,95 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>Hospital Detail</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<style>
+    .hospital-list{
+       
+        background:rgb(70,70,170);
+        padding:1em 2em;
+        margin:0;
+    }
+    .hospital-list li {
+        padding:0.8em;
+        color:white;
+        text-transform:uppercase;
+        border-bottom:1px solid white;
+    }
+    .hospital-list li:last-child{
+        border:none;
+    }
+    .hospital-list li a{
+        color:white;
+    }
+    .hospital-data{
+        background:white;
+        padding:2em;
+    }
+    .hospital-data h5{
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size:25px;
+        padding-bottom: 0.5em;
+
+    }
+    .hospital-data p + h6{
+        background-color: rgb(255, 243, 211);
+        padding:0.5em;
+    }
+    .hospital-data h6, .hospital-data p{
+        padding:0.5em;
+    }
+    .hospital-data p{
+        padding-top:0.8em;
+        margin:0;
+    }
+    .hospital-data small{
+        padding-left:0.5em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color:darkgray;
+    }
+    .hospital-img{
+        max-height:250px;
+        overflow: hidden;
+        
+    }
+    .hospital-img img{
+        width:100%;
+        position: relative;
+        top:-2em;
+    }
+    
+</style>
+    <div class='container'>
+            <div class='row' style='justify-content:space-around'>
+                <div class='col-md-5'>
+
+                    <div class='hospital-data border'>
+                        <h5>{{hospitals.0.name}}</h5>
+                        <div class='hospital-img'>
+                        <img src="{{hospitals.0.profile_image.url}}">
+                    </div>
+                        <p>The center specified for dogs</p>
+                        <h6><i class='icofont icofont-location-pin'></i> {{hospitals.0.address}}</h6>
+                        <h6><i class='icofont icofont-phone'></i> {{hospitals.0.mobile}}</h6>
+                        
+                        <small><i class='icofont icofont-wall-clock'></i> Opening Hour: {{hospitals.0.opening_hours}}</small>
+                    </div>
+                </div>
+                <div class='col-md-4'>
+                  <center>  <h3 style="font-family: 'Fredoka One',cursive; font-size: 40px; margin-bottom: 5px;">List of hospitals </h3></center>
+                    <ol class='hospital-list'>
+                        {% for h in hospitals %}
+                        <li><a href='#'>{{h.name}}</a></li>
+                       {% endfor %}
+                    </ol>
+
+                </div>
+
+                
+            </div>
+{% endblock %}

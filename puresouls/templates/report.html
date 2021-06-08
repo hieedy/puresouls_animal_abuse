@@ -1,0 +1,34 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>Report</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="row">
+    <div class="col-md-4"></div>
+        <div class="col-md-4 mt-5 border p-5 rounded "  style="border-radius: 5px; background-image: url({%static 'images/happyanimal.jpg' %});">
+            <h3 class="text center mb-4" style="font-family: 'Fredoka One',cursive; font-size: 30px" >Report AnimalAbuse</h3>
+            <form action="" method="POST">
+            {% csrf_token %}
+                <label for="sub">Subject</label>
+                <input type="text" class="form-control mb-3" id="sub" name="subject">
+                <label for="msg">Description</label>
+                <textarea rows="5" required class="form-control mb-3" id="msg" name="message"></textarea>
+                <input type="date" placeholder="DOB" name="dob" class="form-control mb-3" id="d" >
+                <input type="time" placeholder="Time" name="time" class="form-control mb-3" id="d" >   
+                <center><input type="submit" class="btn btn-dark" value="Report"></center>
+
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div></div></div>
+
+
+
+
+
+
+
+
+{% endblock %}

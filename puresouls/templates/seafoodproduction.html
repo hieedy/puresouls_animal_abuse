@@ -1,0 +1,31 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>seafood</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container text-center " >
+  <h1 class="p-4 mb-5" style="background-color: #cff4fc;color: midnightblue;font-family:fantasy,cursive,sans-serif;"><b>Innocent Animals Tortured for Testing</b></h1>       
+</div>
+
+<div class="list-group">
+    
+   
+    <a href='{% url "seafoodproduction1" %}' class="list-group-item list-group-item-action list-group-item-secondary">Enter country for analysis on seafoodproduction</a>
+    <a href='{% url "seafoodproduction2" %}' class="list-group-item list-group-item-action list-group-item-success">Enter country and type of fish for analysis on killed for food</a>
+    <a href='{% url "seafoodproduction3" %}' class="list-group-item list-group-item-action list-group-item-danger">Enter Two years and country name for analysis on seafoodproduction</a>
+    <a href='{% url "seafoodproduction4" %}' class="list-group-item list-group-item-action list-group-item-warning">Enter three countries ,year and  fish type for analysis on seafoodproduction  </a>
+    <a href='{% url "seafoodproduction5" %}' class="list-group-item list-group-item-action list-group-item-info">Enter year , country and fish type for analysis on seafoodproduction</a>
+    <a href='{% url "seafoodproduction6" %}' class="list-group-item list-group-item-action list-group-item-light">Enter year and fish type  to find  top 10 countries of  min seafoodproduction </a>
+    <a href='{% url "seafoodproduction7" %}' class="list-group-item list-group-item-action list-group-item-dark">Enter year and fish type  to find  top 10 countries of max seafoodproduction   </a>
+    <a href='{% url "seafoodproduction8" %}' class="list-group-item list-group-item-action list-group-item-dark">Enter country and 2 fish type to for analysis on seafoodproduction</a>
+  </div>
+
+{% endblock %}
+
+
+ 
+
+
+

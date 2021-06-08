@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head><title>profile</title>
+    <link href="{%static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{%static 'css/icofont.css' %}" rel="stylesheet"></head>
+    <body>
+       <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                
+            </div>
+                <div class="col-md-4 mt-5">
+                <h3 class="text-center md-4">BLOG</h3>
+                 <form>
+                         <label for="s">Enter Subject</label>
+                         <input type="text" name="subject" class="form-control" id="s">
+                         <input type="file" required name="image" class="form-control mb-3 mt-3">
+                         
+                         <label for="msg" >Description</label>
+                         <textarea name="description" class="form-control" id="d" rows="4"></textarea>
+                    
+                    </form>
+            </div>
+           </div>
+                    <div class="col-md-4"></div>
+            
+                  
+        </div>
+    </body>
+</html>
+               

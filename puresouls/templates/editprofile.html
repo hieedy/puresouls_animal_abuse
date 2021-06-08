@@ -1,0 +1,74 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>Edit Profile</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+            
+            
+       <div class="container">
+        <div class="row">
+            <div class="col-md-3 mt-5" >
+            <form method ='POST' enctype="multipart/form-data">
+                {% csrf_token %}
+
+                    {% if user_data.profile_image %}
+                        <img src="{{user_data.profile_image.url}}" height="200" class="w-100">
+                     {% else %}   
+                     <img src=" {%static 'images/default.png' %}" height="200" class="w-100">
+                     {% endif %}
+                   <input type="file" required name="image" class="form-control mb-3 mt-3">
+                         <center><input type="submit"  name="save"class="btn btn-dark" value="update"></center>
+                         <input type="text" value='1' name='type' hidden>
+                    </form>
+                </div>
+                <div class="col-md-9 mt-5 border p-5 rounded shadow"  style="box-shadow: 0px 0px 10px blue">
+                <h3 class="text-center mb-4">Edit profile</h3>
+            
+               <form class="row" method='POST'>
+                {% csrf_token %}
+                <input type="text" value='2' name='type' hidden>
+                   <div class="col-md-6 mb-3">
+                       <label for="f"> Name </label>
+                       <input type="text" name="fn" class="form-control" id="n" value="{{user_data.name}}">
+                   </div>
+                
+                   <div class="col-md-6 mb-3">
+                       <label for="c"> contact number</label>
+                       <input type="text" name="phn" class="form-control" id="c" value="{{user_data.mobile}}">
+                   </div>
+                   <div class="col-md-6 mb-3">
+                       <label for="d"> DOB</label>
+                       <input type="date" name="dob" class="form-control" id="d" value='{{dob}}'>
+                   </div>
+                   <div class="col-md-6 mb-3 mt-4">
+
+                       <label for="g"> gender</label>
+                       {% if user_data.gender == "male" %}
+                       <input type="radio" name="gen" class="form-check-input" id="g" value="male" checked> male
+                       <input type="radio" name="gen" class="form-check-input" id="g" value="female"> female
+
+                        {% else %}
+                        <input type="radio" name="gen" class="form-check-input" id="g" value="male" > male
+                        <input type="radio" name="gen" class="form-check-input" id="g" value="female" checked> female
+                        {% endif %}
+
+                    </div>
+                   <div class="col-md-6 mb-3">
+                       <label for="c"> City</label>
+                       <input type="text" name="city" class="form-control" id="c" value="{{user_data.city}}">
+                   </div>
+                   
+                   <div class="col-md-6 mb-3">
+                    <label for="c">State</label>
+                    <input type="text" name="state" class="form-control" id="s" value="{{user_data.state}}">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="c"> Address</label>
+                    <textarea type="text" name="address" class="form-control" id="c" >{{user_data.address}}</textarea>
+                </div>
+                   <center> <input type="submit" name="save1" class="btn btn-dark" value="submit"></center>
+            </form>
+            </div>    </div>
+        </div>
+{% endblock %}

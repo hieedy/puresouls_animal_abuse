@@ -1,0 +1,60 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>List Of Appointment</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+
+    <ol class='appointment-list'>
+
+      <table class='table'>
+        <tr>
+          <th>Doctor Name</th>
+          <th>Appointment date</th>
+          <th>Appointment time</th>
+          <th>Appointment Status</th>
+        </tr>
+
+        {% for appointment in appointments %}
+          <tr>
+            <td>{{appointment.doc_id.name}}</td>
+            <td>{{appointment.date}}</td>
+            <td>{{appointment.time}}</td>
+
+            {% if appointment.app_status == 'P' %}
+
+            <td>Pending</td>
+
+            {% elif appointment.app_status == 'A' %}
+            <td>Approved</td>
+            {% elif appointment.app_status == 'NA' %}
+              <td>Not Approved</td>
+              <td>Reason: {{appointment.message}}</td>
+            {% endif %}  
+            
+          </tr>
+          {% empty %} 
+        {% endfor %}
+
+      </table>
+        
+     
+       
+    </ol>  
+
+    
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+{% endblock %}

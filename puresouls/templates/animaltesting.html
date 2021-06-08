@@ -1,0 +1,25 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>animaltesting</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container text-center " >
+    <h1 class="p-4 mb-5" style="background-color: #cff4fc;color: midnightblue;font-family:fantasy,cursive,sans-serif;"><b>Analysis On Innocent Animals Tortured for Testinh</b></h1>       
+  </div>
+<div class="list-group">
+    
+   
+    <a href='{% url "animaltesting1" %}' class="list-group-item list-group-item-action list-group-item-secondary">Enter state for analysis on animal tortured for testing </a>
+    <a href='{% url "animaltesting2" %}' class="list-group-item list-group-item-action list-group-item-success">Enter two states for analysis on animal tortured for testing </a>
+    <a href='{% url "animaltesting3" %}' class="list-group-item list-group-item-action list-group-item-danger">Enter state to find  max animal testing top 10 contries</a>
+    <a href='{% url "animaltesting4" %}' class="list-group-item list-group-item-action list-group-item-warning">Enter state to find  min animal testing top 10 contries </a>
+    <a href='{% url "animaltesting5" %}' class="list-group-item list-group-item-action list-group-item-info">Enter state and animal category for analysis on animal tortured for testing </a>
+    </div>
+
+{% endblock %}
+
+
+ 
+

@@ -1,0 +1,59 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>Poultry</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container a text-center mt-5 p-5"> 
+    <form action="" method="POST">
+      {% csrf_token %}
+        <label for="country1">SELECT COUNTRY 1:</label>
+    
+        <select name="country1" id="country1">
+          <option value="Afghanistan">Afghanistan</option>
+          <option value="Albania">Albania</option>
+          <option value="Algeria">Algeria</option>
+          <option value="American Samoa">American Samoa</option>
+         
+        </select>
+      </br>
+        <label for="country">SELECT COUNTRY 2:</label>
+    
+        <select name="country" id="country">
+          <option value="Afghanistan">Afghanistan</option>
+          <option value="Albania">Albania</option>
+          <option value="Algeria">Algeria</option>
+          <option value="American Samoa">American Samoa</option>
+          
+        </select>
+      </br>
+        <label for="year">SELECT YEAR :</label>
+    
+        <select name="year" id="year">
+          <option value="1990">1990</option>
+          <option value="1991">1991</option>
+          <option value="1992">1992</option>
+          <option value="1993">1993</option>
+          <option value="1994">1994</option>
+          <option value="1995">1995</option>
+          
+        
+        </select>
+        <label for="year">SELECT YEAR :</label>
+    
+        <select name="year" id="year">
+          <option value="1990">1990</option>
+          <option value="1991">1991</option>
+          <option value="1992">1992</option>
+          <option value="1993">1993</option>
+          <option value="1994">1994</option>
+          <option value="1995">1995</option>
+          
+        
+        </select>
+      </br></br>  
+        <button class=" submit n">Enter</button></div>
+    </form> 
+
+
+{% endblock %}

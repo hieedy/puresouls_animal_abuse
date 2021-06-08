@@ -1,0 +1,41 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>seafood</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container a text-center mt-5 p-5"> 
+    <form action="" method="POST">
+    {% csrf_token %}
+      <label for="country">SELECT THE COUNTRY:</label>
+  
+      <select name="country" id="country">
+        <option value="India">India</option>
+        <option value="Japan">Japan</option>
+        <option value="China">China</option>
+        <option value="Afghanistan">Afghanistan</option>
+      </select>
+     
+      <label for="fishtype">SELECT Fish Type:</label>
+    
+        <select name="fishtype" id="fishtype">
+          <option value="freshwater fish">freshwater fish</option>
+          <option value="freshwater fish">freshwater fish</option>
+          <option value="freshwater fish">freshwater fish</option>
+          <option value="freshwater fish">freshwater fish</option>
+          
+        </select>
+        <label for="fishtype">SELECT Fish Type:</label>
+    
+        <select name="fishtype" id="fishtype">
+          <option value="freshwater fish">freshwater fish</option>
+          <option value="freshwater fish">freshwater fish</option>
+          <option value="freshwater fish">freshwater fish</option>
+          <option value="freshwater fish">freshwater fish</option>
+          
+        </select>
+      <button class=" submit n">Enter</button></div>
+  </form>
+ 
+
+{% endblock %}

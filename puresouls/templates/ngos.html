@@ -1,0 +1,121 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>Ngos List</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<style>
+    .ngo-list{
+       
+        background:rgb(70,70,170);
+        padding:1em 2em;
+        margin:0;
+    }
+    .ngo-list li {
+        padding:0.8em;
+        color:white;
+        text-transform:uppercase;
+        border-bottom:1px solid white;
+    }
+    .ngo-list li:last-child{
+        border:none;
+    }
+    .ngo-list li a{
+        color:white;
+    }
+    .ngo-data{
+        background:white;
+        padding:2em;
+    }
+    .ngo-data h5{
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size:25px;
+        padding-bottom: 0.5em;
+
+    }
+    .ngo-data p + h6{
+        background-color: rgb(255, 243, 211);
+        padding:0.5em;
+    }
+    .ngo-data h6, .hospital-data p{
+        padding:0.5em;
+    }
+    .ngo-data p{
+        padding-top:0.8em;
+        margin:0;
+    }
+    .ngo-data small{
+        padding-left:0.5em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color:darkgray;
+    }
+    .ngo-img{
+        max-height:250px;
+        overflow: hidden;
+        
+    }
+    .ngo-img img{
+        width:100%;
+        position: relative;
+        top:-2em;
+    }
+    
+</style>
+    <div class='container'>
+            <div class='row' style='justify-content:space-around'>
+                <div class='col-md-5'>
+
+                    {% if ngo %}
+                    <div class='ngo-data border'>
+                        <h5>{{ngo.name}}</h5>
+                        <div class='ngo-img'>
+                        <img src="{{ngo.profile_image.url}}">
+                    </div>
+                        
+                        <h6><i class='icofont icofont-paw'></i>{{ngo.description}} </h6>
+                        <h6><i class='icofont icofont-phone'></i>{{ngo.mobile}}</h6>
+                        <h6><i class='icofont icofont-paw'></i><a href="{{ngo.website}}" target="_blank">Visit Website</a></h6>
+                        
+                        <small><i class='icofont icofont-wall-clock'></i> Working Hour:{{ngo.opening_hours}}</small>
+                    </div>
+                    {% else %}
+                    <div class='ngo-data border'>
+                        <h5>{{ngos.0.name}}</h5>
+                        <div class='ngo-img'>
+                        <img src="{{ngos.0.profile_image.url}}">
+                    </div>
+                        
+                        <h6><i class='icofont icofont-paw'></i>{{ngos.0.description}} </h6>
+                        <h6><i class='icofont icofont-phone'></i>{{ngos.0.mobile}}</h6>
+                        <h6><i class='icofont icofont-paw'></i><a href="{{ngos.0.website}}" target="_blank">Visit Website</a></h6>
+                        <small><i class='icofont icofont-wall-clock'></i> Working Hour:{{ngos.0.opening_hours}}</small>
+                    </div>
+                    {% endif %}
+
+
+
+                </div>
+                <div class='col-md-4'>
+                  <center>  <h3 style="font-family: 'Fredoka One',cursive; font-size: 40px; margin-bottom: 5px;">List of NGO'S </h3></center>
+                    <ol class='ngo-list'>
+                        {% for ng in ngos %}
+                        <li>
+                            <a href='{% url "ngos_id" ng.id %}'>{{ng.name}}</a>
+                        
+                        </li>
+                      <!----  <li><a href='#'>Speech For Speechless</a></li>
+                        <li><a href='#'>Helping Hands</a></li>
+                        <li><a href='#'>Hands For Paws</a></li>
+                        <li><a href='#'>Listening Creatures</a></li> -->
+                        {% empty %} 
+                        {% endfor %}
+                    </ol>
+
+                </div>
+
+                
+            </div>
+{% endblock %}

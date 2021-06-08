@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>About Us</title>
+{% endblock %}
+{% load static %}
+ {% block content %}
+
+ <body>
+<div class="container-fluid banner"style="background-image: url({%static 'images/banner-bg.jpg' %})">
+         
+         <div class="row">
+             <div class="col-md-12 text-center banner-color">
+                 <h1 class="h">About Us</h1>
+                 <h3 class="hi">Home | About Us</h3>
+             </div> </div>
+             
+</div>
+    <div class="container-fluid">
+     <div class="row pt-5 "style='justify-content:space-around;'>
+     
+      
+    <div class="col-md-6 ps-5 pt-5  ">
+  <h1 style= " font-family: 'Poppins', sans-serif';   font-weight: 600;"><b>About Us</b></h1>    
+  <h5 style="margin-bottom: 20px; font-weight: 300 font-family:' Poppins', sans-serif; color: #222222; line-height: 1.2em ">We are hear to listen you</h5>
+ <p>PURESOULS is a registered non-profit organization that works for the welfare of animals through the medium of humane and animal welfare education.PURESOULS belief that every animal on this planet have same rights to live just as humans. And it is duty of every human being to help these voiceless creatures whenever in need. Working on this belief we are providing food to all the aninmals which are in our city and every possible medical help neended to them. Through this medium  we want to motivate every one to help and protect animals at every cost.</br><b>Thank You!</b> </p>
+</div>
+ <div class="col-md-4 ">
+  <img src={%static "images/mylogo.png" %}  width="100%"  >
+  
+  </div>
+</div></div>
+     
+
+    <div class="container mt-2">
+            <div class="row">
+                <div class="col-md-3" ></div>
+                <div class="col-md-6 mt-5 " >
+                <h1  class=" pt-2" style="font-family: 'Poppins', sans-serif';   margin-bottom: 0;;font-weight: 600;color:black   !important " ><b>Our Mission </b></h1>
+             <video src={%static "images/about2.mp4" %} height="450" width="100%" controls  data-aos="flip-up"  ></video>
+              <p  class="para text-justify  " style="font-size: 20px ; font-family: cursive; ">Our mission is to feed and love every animal and motivate others too to feed and love these innocent god's creation. We believe every animal deserve same love and respect as humas as they have equal right to live on this planet peacefully just like humans </p>
+             
+                </div>
+                
+ </div>
+<div class="col-md-3"> </div></div>
+     
+     
+            <div class="row pt-5">
+                <div class="col-md-6">
+                <img src={%static "images/about-img.jpg" %} height="500px" width="100%" style=";" >
+                
+                </div>
+                
+              <div class="col-md-5 ps-5 pt-5  ">
+            <h1 style= " font-family: 'Poppins', sans-serif';   margin-bottom: 0;;font-weight: 600;">Our Aim</h1>    
+            <!--<h5 style="margin-bottom: 20px; font-weight: 300 font-family:' Poppins', sans-serif; color: #222222; line-height: 1.2em ">We are hear to listen you</h5> -->
+           <ul style="color: #777777;font-family: 'Poppins', sans-serif; font-size: 18px;font-weight: 300;line-height: 1.625em;">
+          <li>
+
+            To make world more safe and humble towards animals
+          </li>
+          
+          <li>
+            To educate people about laws made for animals that protect them under indian Constitution
+          </li>
+          <li>
+            To educate people what exactly animal cruelty is.Animals too have feeling and family.
+          </li>
+          <li>
+            To make people understand that killing and eating these poor animals is so wrong.We all should pledge to become vegetarian.
+          </li>
+          <li>
+            To appeal people to free their  caged birds. As sky is their home just like us they too love freedom
+          </li>
+          <li>
+            And most importantly if you cant feed these animals then please dont even poison
+          </li>
+          </ul>
+             
+                  
+         
+            </div>
+
+          </div>
+     
+     
+     <div style="background-image: url({%static 'images/call-bg.jpg' %}) ;background-repeat:no-repeat;background-size:cover; " >
+     <div class="row" style="background-color: rgba(250, 183, 0, 0.75); padding-top: 100px; padding-bottom: 100px">
+          <div class="col-md-1"></div>
+       <div class="col-md-10 pt-5 pb-5">
+           <center><h1  class=" pt-5 text-white" style="font-family: 'Fredoka One',cursive; font-size: 40px;color:#023C5A  ">Want to help? Become a volunteer</h1><br/></center>
+           <p class="text-white text-center"  style="font-family: 'Fredoka One',cursive; font-size: 20px ">You can too part of our team.That too absolutely FREE<br/> You just have to register with us and help your furry friends around you by feeding them cleaning them , protecting them from ticks and fleas. Share your videos and pics with us to get amazing suprise rewards</p>
+       <center> <a href="register.html"  class="btn rounded-pill  " style=" background: white;color:black; font-family: DM Sans ,sans-serif; font-size: 20px ">&nbsp;&nbsp;&nbsp;&nbsp;Register&nbsp;&nbsp;&nbsp;&nbsp;</a> </center>
+           <div class="col-md-1"></div>
+     
+         </div></div> </div>
+            
+     <script src="{%static 'js/aos.js' %}"></script>
+  <script>
+    AOS.init({
+    	duration:1000
+    });
+
+  </script>	
+     <script src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
+ </body>   
+
+
+{% endblock %}

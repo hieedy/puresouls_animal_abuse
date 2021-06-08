@@ -1,0 +1,71 @@
+{% extends 'header.html' %} 
+{% block content %}
+{% load static %}
+
+<!-- <div class="container">
+  <div class="row">
+   <div class="col-md-6"> 
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src=" {%static 'images/henkilling.jpg' %}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Poultry animals killed for food</h5>
+      <a href='{% url "poultry" %}' class="btn btn-primary">MAKE YOUR ANALYSIS</a>
+    </div>
+  </div></div>
+        <div class="col-md-6"> 
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{%static 'images/animaltesting.jpg'   %}" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">Aniamsl tortured for testing</h5>
+        
+        <a href='{% url "animaltesting" %}' class="btn btn-primary">MAKE YOUR ANALYSIS</a>
+      </div>
+    </div>
+
+</div></div>
+
+<div class="row">
+  <div class="col-md-6"> 
+ <div class="card" style="width: 18rem;">
+   <img class="card-img-top" src=" {%static 'images/animalkilling.jpg' %}" alt="Card image cap">
+   <div class="card-body">
+     <h5 class="card-title">Animals slaughter for  food</h5>
+     <a href='{% url "animalslaughter" %}' class="btn btn-primary">MAKE YOUR ANALYSIS</a>
+   </div>
+ </div></div>
+       <div class="col-md-6"> 
+       <div class="card" style="width: 18rem;">
+       <img class="card-img-top" src="{%static 'images/fishkilling.jpg'   %}" alt="Card image cap">
+       <div class="card-body">
+       <h5 class="card-title"> Fishes killed for food</h5>
+       
+       <a href='{% url "seafoodproduction" %}' class="btn btn-primary">MAKE YOUR ANALYSIS</a>
+     </div>
+   </div>
+
+</div></div>
+</div>  -->
+
+
+
+
+ <div class="container text-center">
+    <div class="dropdown">
+        <button class="btn s dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="icofont-chart-bar-graph fa fa-support ms-4 h"></span>
+             
+          DYNAMIC VISUALIZATIONS
+        </button>
+        <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href='{% url "poultry" %}'>Poultry production </a></li>
+          <li><a class="dropdown-item" href='{% url "animalslaughter" %}'>Animal slaughter</a></li>
+          <li><a class="dropdown-item" href='{% url "seafoodproduction" %}'>seafood</a></li>
+          <li><a class="dropdown-item" href='{% url "animaltesting" %}'>Animal testing</a></li>
+          
+        </ul>
+      </div>
+      </div>  
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>animaltesting</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container a text-center mt-5 p-5"> 
+    <form action="" method="POST">
+    {% csrf_token %}
+      <label for="year">SELECT THE STATE:</label>
+  
+      <select name="state" id="state">
+        <option value="India">India</option>
+        <option value="Japan">Japan</option>
+        <option value="China">China</option>
+        <option value="Afghanistan">Afghanistan</option>
+      </select>
+      <button class=" submit n">Enter</button></div>
+  </form>
+  </div>
+
+{% endblock %}
+
+
+ 

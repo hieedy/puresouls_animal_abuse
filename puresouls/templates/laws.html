@@ -1,0 +1,153 @@
+{% extends 'header.html' %} 
+{% block title %}
+    <title>laws List</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
+<style>
+.laws-list{
+       
+       background:rgb(70,70,170);
+       padding:1em 2em;
+       margin:0;
+   }
+   .laws-list li {
+       padding:0.8em;
+       color:white;
+       text-transform:uppercase;
+       border-bottom:1px solid white;
+   }
+   .laws-list li:last-child{
+       border:none;
+   }
+   .laws-list li a{
+       color:white;
+   }
+
+
+
+
+
+</style>
+<body>
+  <div class="container">
+    <div class="row">
+     
+     <div class="col-md-8" style="position:sticky;top:1em;">
+      <h3 style="text-shadow: dimgray; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; padding-bottom: 0.5em;">Why Laws For Animal Protection Is Important?</h3>
+     <p style="font-family:cursive; margin-top: 10px; font-size: 20px; text-justify: center;">
+        While farmed animals are often left out of state animal protection laws, a number of states have adopted measures to limit the use of “intensive confinement” farming practices. 
+        Such practices entail confining animals in restraints that are so small the animals often can’t fully stand up or move around.
+        Chickens and hens kept in battery cages don’t have room to stretch their wings.
+  
+        Local animal protection laws: Many other companion animal protection measures are enacted and enforced at the local level. 
+        For example, hundreds of cities and counties have retail pet sale bans like California’s and Maryland’s
+  </p>
+       
+  
+
+  <!--------------------------------------------------card-slider-->
+  <div id="card-slider" class="owl-carousel">
+    <div class="testimonial">
+           <div class="card" style=" height:300px;  width: 24rem;">
+<img src={%static "images/AdobeStock_49198787-1024x768.jpeg" %} class="card-img-top" alt="...">
+<div class="card-body">
+
+
+</div>
+</div>
+    </div>
+    
+    
+    <div class="testimonial">
+            <div class="card" style=" height:300px;  width: 24rem;">
+<img src={%static "images/animalabuse.jpg" %} class="card-img-top" alt="...">
+<div class="card-body">
+
+
+</div>
+</div>
+    </div>
+    
+    
+    <div class="testimonial">
+             <div class="card" style=" height:300px;  width: 24rem;">
+<img src={%static "images/animalabuse2.jpg" %} class="card-img-top" alt="...">
+<div class="card-body">
+
+
+</div>
+</div>
+    </div>
+    <div class="testimonial">
+           <div class="card" style=" height:300px;  width: 24rem;">
+<img src={%static "images/animalabuse3.jpg" %} class="card-img-top" alt="...">
+<div class="card-body">
+
+
+</div>
+</div>
+    </div>
+
+</div>
+    </div>
+     
+  
+      
+        <div class="col-md-4" >
+   <h3 style="font-family: 'Fredoka One',cursive;  margin-bottom: 5px;  padding-bottom: 0.5em; ">List of Laws Under Indian Constitution </h3>
+  <ol class='laws-list'>
+
+    {% for law in laws %}
+    <li><a href="{% url 'lawsdetails' law.id %}">{{law.title}}</a></li>
+  <!--  <li><a href='#'>animal abuse</a></li>
+    <li><a href='#'>animal abuse</a></li>
+    <li><a href='#'>animal abuse</a></li>
+    <li><a href='#'>animal abuse</a></li>
+    <li><a href='#'>animal abuse</a></li>
+    <li><a href='#'>animal abuse</a></li>
+    <li><a href='#'>animal abuse</a></li>
+    <li><a href='#'>animal abuse</a></li>
+    <li><a href='#'>animal abuse</a></li> -->
+    {% empty %} 
+    {% endfor %}
+ 
+   
+</ol>  
+</div>
+
+</div>     
+      </div>
+
+      
+  </div>
+ 
+     </div>
+
+
+  </div> 
+</body>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+ <script>
+$(document).ready(function(){
+    $("#card-slider").owlCarousel({
+        items:2,
+        itemsDesktop:[800,2],
+        itemsDesktopSmall:[990,1],
+        itemsTablet:[768,1],
+        pagination:true,
+        navigation:false,
+        navigationText:["",""],
+        slideSpeed:1000,
+        autoPlay:true
+    });
+});
+</script>
+{% endblock %}
